@@ -1,4 +1,4 @@
-# REST API Project
+# SpringBoot RESTful API Project
 
 This is a Spring Boot REST API project that connects to a **PostgreSQL** database and return two endpoints in json listing all subjects associated with Software Engineering 
 programme and list of students studying the programme respectively. Follow the instructions below to set up and run the project on your local machine.
@@ -132,8 +132,8 @@ docker ps
 
 | Method | Endpoint          | Description |
 |--------|------------------|-------------|
-| GET    | `/api/students`      | Get all students |
-| GET    | `/api/subjects`      | Get all subjects |
+| GET    | `/students`      | Get all students |
+| GET    | `/subjects`      | Get all subjects |
 ---
 
 ## ✅ Testing the API
@@ -141,8 +141,8 @@ docker ps
 You can test the API using **Postman** or **Web Browser**:
 
 ```sh
-http://localhost:8080/api/students
-http://localhost:8080/api/subjects
+http://localhost:8080/students
+http://localhost:8080/subjects
 ```
 
 ---
