@@ -32,7 +32,7 @@ INSERT INTO subject (name, academic_year) VALUES
 ('Introduction to IT Security-IA 124', 1),
 ('Numerical Analysis for ICT-MT 1211', 1),
 ('Introduction to Probability and Statistics-ST 1210', 1),
-('Industrial Practical Training I-CS 131', 1)
+('Industrial Practical Training I-CS 131', 1),
 ('Computer Networking Protocols-CN 211', 2),
 ('Introduction To Linux/Unix Systems-CP 211', 2),
 ('Systems Analysis and Design-CP 212', 2),
