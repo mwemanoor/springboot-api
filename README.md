@@ -206,3 +206,36 @@ This project is licensed under the **MIT License**.
 
 Thanks to all contributors! If you find this project useful, **Give it a star ⭐ on GitHub!**
 
+---
+
+# Backup Schemes Overview
+
+## 1. Full Backup
+**How it works**: Copies **all data** every time.  
+✅ **Pros**: Fast restore, simple recovery.  
+❌ **Cons**: High storage, slow backups.
+
+## 2. Incremental Backup
+**How it works**: Backs up **only changes since last backup** (full or incremental).  
+✅ **Pros**: Minimal storage, fast backups.  
+❌ **Cons**: Slow restore (depends on backup chain), fragile.
+
+## 3. Differential Backup
+**How it works**: Backs up **all changes since last full backup**.  
+✅ **Pros**: Faster restore than incremental, moderate storage.  
+❌ **Cons**: Slower backups over time.
+
+### Quick Comparison
+| Type          | Storage | Backup Speed | Restore Speed | Risk  |  
+|---------------|---------|--------------|---------------|-------|  
+| **Full**      | High    | Slow         | Fast          | Low   |  
+| **Incremental**| Low    | Fast         | Slow          | High  |  
+| **Differential**| Medium | Moderate    | Moderate      | Medium|  
+
+**Best Use Cases**:
+- **Full**: Critical systems (e.g., databases).
+- **Incremental**: Frequent backups (e.g., daily files).
+- **Differential**: Balanced approach (e.g., weekly full + daily differential).
+
+**Tip**: Hybrid strategies (e.g., weekly full + daily incremental) optimize efficiency.  
+
