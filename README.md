@@ -239,3 +239,36 @@ Thanks to all contributors! If you find this project useful, **Give it a star �
 
 **Tip**: Hybrid strategies (e.g., weekly full + daily incremental) optimize efficiency.  
 
+## Server Management Scripts
+
+## 📜 Scripts
+
+| Script            | Purpose                          | Frequency       |
+|-------------------|----------------------------------|-----------------|
+| `health_check.sh` | Monitor CPU/Memory/Disk + API health | Every 6 hours  |
+| `backup_api.sh`   | Backup JAR + PostgreSQL DB       | Daily at 2 AM   |
+| `update_server.sh`| Update OS + App + Restart Service| Every 3 days at 3 AM |
+
+## 🛠️ Setup
+
+```bash
+# 1. Install dependencies (if not installed)
+sudo apt install -y curl postgresql-client git maven
+
+# 2. Make scripts executable 
+chmod +x *.sh
+
+# 3. Running the scripts (in the created instance)
+# Health Check (no sudo needed)
+./health_check.sh
+
+# Backup (requires sudo for DB access)
+sudo ./backup_api.sh
+
+# System Update (requires sudo)
+sudo ./update_server.sh
+
+# 4. Schedule (crontab -e)
+0 */6 * * * /home/ubuntu/health_check.sh >> /var/log/server_health.log 2>&1
+0 2 * * * /home/ubuntu/backup_api.sh >> /var/log/backup.log 2>&1
+0 3 */3 * * /home/ubuntu/update_server.sh >> /var/log/update.log 2>&1
