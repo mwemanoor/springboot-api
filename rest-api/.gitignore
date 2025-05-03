@@ -14,10 +14,17 @@ target/
 .sts4-cache
 
 ### IntelliJ IDEA ###
-.idea
+.idea/
 *.iws
 *.iml
 *.ipr
+
+
+# Sensitive files
+api.pem
+*.pem
+.docker/config.json
+.env
 
 ### NetBeans ###
 /nbproject/private/
